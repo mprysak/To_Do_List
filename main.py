@@ -3,11 +3,17 @@ def adding_task(list, task):
   print('Your task is add')
 
 def removeing_task(list, task):
-  list.remove(task)
+  if not list:
+    print("ERROR! - You can't remove a task who is not defint")
+  elif list >= 0:
+    list.remove(task)
   print('Your task is remove')
 
 def complete_task(list, task):
-  list.remove(task)
+  if not list:
+    print("ERROR! - You can't complete a task who is not defined")
+  elif list >= 0:
+    list.remove(task)
   print('Your task is complete and romove from the list')
 
 tasks = []
@@ -19,8 +25,6 @@ while True:
     action = int(input('What action do you want to do?\n 1. add task\n 2. remove task\n 3. complete task    '))
   except ValueError:
     print('ERROR - Select actions bettwen 1 and 2')
-  except KeyboardInterrupt:
-    print("ERROR! - You can't quit!")
   
   if action == 1:
     action1 = input('What task you want to add?: ')
